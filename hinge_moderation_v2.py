@@ -7,7 +7,9 @@ Solution: Chain of Thought AI with human-in-the-loop for high-risk cases
 import os # for reading API keys from environment - reads API key from .env file
 import json # for handling structured data - formats responses
 import base64 # converts image to base64
-from openai import OpenAI # for calling GPT
+import re # for parsing scores from AI responses
+#from openai import OpenAI # for calling GPT
+from langfuse.openai import openai
 from datetime import datetime # for timestamps - tracks when decisions are made
 from dotenv import load_dotenv
 class HingeAIModerator: # this is our main AI moderator. 
@@ -17,7 +19,7 @@ class HingeAIModerator: # this is our main AI moderator.
     def __init__(self): # this runs when we create a new moderator
             print ("Starting Hinge AI Moderator...") # welcome message
             load_dotenv()
-            self.client = OpenAI(api_key=os.getenv("OPENAI_API_KEY")) #OpenAI connection
+            self.client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
             
             #load Hinge guidelines once when moderator starts
             with open("hinge-principles.txt","r") as file:
@@ -147,6 +149,50 @@ Score: 10 (explicit content detected)
 Analysis: Content flagged by AI safety systems
 **Action: Human review required**"""
 
+    def parse_score_from_response(self, ai_response):
+        """Extract the 1-10 score from AI response"""
+        # Look for "Score: X" pattern in the response
+        score_match = re.search(r'Score:\s*(\d+)', ai_response)
+        if score_match:
+            return int(score_match.group(1))
+        return None  # If no score found
+
+    def run_evaluation(self):
+        """Evaluate AI performance against ground truth dataset"""
+        print("Running evaluation against ground truth...")
+
+        # Step 1: Load your evaluation dataset
+        with open("evaluation_dataset.json", "r") as file:
+            test_cases = json.load(file)
+
+        results = []
+
+        # Step 2: Test each case and track with Langfuse
+        for case in test_cases:
+            content = case["content"]
+            expected_range = case["expected_score_range"]
+
+            ai_response = self.moderate_content(content)
+            ai_score = self.parse_score_from_response(ai_response)
+
+            # Check if score is within expected range
+            is_accurate = False
+            if ai_score is not None:
+                is_accurate = expected_range[0] <= ai_score <= expected_range[1]
+
+            results.append({
+                "content": content,
+                "ai_response": ai_response,
+                "ai_score": ai_score,
+                "expected_range": expected_range,
+                "is_accurate": is_accurate
+      })
+
+        # Step 3: Generate accuracy report
+        # Your task: calculate overall accuracy percentage
+        # Your task: identify false positives and negatives
+
+        return results
 
 def main(): # this is where our program starts
      """Run the AI moderator demo"""
@@ -155,9 +201,11 @@ def main(): # this is where our program starts
      print("=" * 50) # another line
 
      moderator = HingeAIModerator() #create our AI moderator
-     test_content = "Hey sexy, send me your number" #sample content to test
-     result = moderator.moderate_content(test_content) # analyze the content
-     print(f"Result: {result}") # show the decision
 
+     # Run evaluation against ground truth dataset
+     results = moderator.run_evaluation()
+     print(f"Evaluated {len(results)} test cases")
+
+        
 if __name__ == "__main__": # this runs when we execute the file
      main()

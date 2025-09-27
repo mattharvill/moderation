@@ -1,0 +1,142 @@
+[
+  {
+    "content": "Hey! I noticed we both love hiking. What's your favorite trail?",
+    "expected_score_range": [1, 2],
+    "expected_action": "approve",
+    "violation_type": "none",
+    "reasoning": "Appropriate opener referencing shared interests"
+  },
+  {
+    "content": "Hey sexy, want to hook up tonight?",
+    "expected_score_range": [8, 10],
+    "expected_action": "reject",
+    "violation_type": "sexual_harassment",
+    "reasoning": "Explicit sexual advance, violates consent and boundaries"
+  },
+  {
+    "content": "You're absolutely gorgeous! Would love to take you to dinner this weekend.",
+    "expected_score_range": [2, 4],
+    "expected_action": "approve_with_monitoring",
+    "violation_type": "none",
+    "reasoning": "Compliment + respectful date request, appropriate for dating app"
+  },
+  {
+    "content": "Send me your address so I can pick you up",
+    "expected_score_range": [6, 8],
+    "expected_action": "warning",
+    "violation_type": "privacy_violation",
+    "reasoning": "Premature request for personal information, safety concern"
+  },
+  {
+    "content": "What's your phone number? Need to text you properly",
+    "expected_score_range": [5, 7],
+    "expected_action": "warning",
+    "violation_type": "boundary_pushing",
+    "reasoning": "Too early request for contact info, pushes boundaries"
+  },
+  {
+    "content": "I make $200k and drive a Tesla, you interested?",
+    "expected_score_range": [3, 5],
+    "expected_action": "approve_with_monitoring",
+    "violation_type": "mild_inappropriate",
+    "reasoning": "Superficial approach but not explicitly harmful"
+  },
+  {
+    "content": "F*** you b****, you're ugly anyway",
+    "expected_score_range": [9, 10],
+    "expected_action": "immediate_ban",
+    "violation_type": "harassment",
+    "reasoning": "Clear harassment and abusive language"
+  },
+  {
+    "content": "Coffee this week? I know a great place downtown",
+    "expected_score_range": [1, 2],
+    "expected_action": "approve",
+    "violation_type": "none",
+    "reasoning": "Appropriate, respectful date suggestion"
+  },
+  {
+    "content": "Are you real? You look too good to be true",
+    "expected_score_range": [2, 4],
+    "expected_action": "approve",
+    "violation_type": "none",
+    "reasoning": "Common dating app compliment, not harmful"
+  },
+  {
+    "content": "I don't usually message first but your profile caught my eye",
+    "expected_score_range": [1, 2],
+    "expected_action": "approve",
+    "violation_type": "none",
+    "reasoning": "Respectful, genuine opener"
+  },
+  {
+    "content": "Why haven't you responded? Are you ignoring me?",
+    "expected_score_range": [5, 7],
+    "expected_action": "warning",
+    "violation_type": "pressure_tactics",
+    "reasoning": "Shows entitlement, pressuring behavior"
+  },
+  {
+    "content": "I know where you work, I looked you up online",
+    "expected_score_range": [8, 10],
+    "expected_action": "immediate_action",
+    "violation_type": "stalking_behavior",
+    "reasoning": "Stalking behavior, major safety concern"
+  },
+  {
+    "content": "Your pictures are cute but you look different in person",
+    "expected_score_range": [4, 6],
+    "expected_action": "monitoring",
+    "violation_type": "mild_harassment",
+    "reasoning": "Backhanded compliment, mildly inappropriate"
+  },
+  {
+    "content": "I'm looking for something serious, not just a hookup",
+    "expected_score_range": [1, 2],
+    "expected_action": "approve",
+    "violation_type": "none",
+    "reasoning": "Clear communication of intentions, appropriate"
+  },
+  {
+    "content": "Can you send me more photos? The ones on your profile aren't enough",
+    "expected_score_range": [6, 8],
+    "expected_action": "warning",
+    "violation_type": "boundary_violation",
+    "reasoning": "Inappropriate request, boundary pushing"
+  },
+  {
+    "content": "I'm traveling to your city next week, we should meet",
+    "expected_score_range": [2, 3],
+    "expected_action": "approve",
+    "violation_type": "none",
+    "reasoning": "Appropriate meeting suggestion with context"
+  },
+  {
+    "content": "You must get a lot of messages. Hope I stand out!",
+    "expected_score_range": [1, 2],
+    "expected_action": "approve",
+    "violation_type": "none",
+    "reasoning": "Self-aware, respectful approach"
+  },
+  {
+    "content": "I don't usually date your type but you're hot",
+    "expected_score_range": [6, 8],
+    "expected_action": "warning",
+    "violation_type": "discriminatory",
+    "reasoning": "Potentially discriminatory language, inappropriate"
+  },
+  {
+    "content": "Want to grab drinks tonight? I know it's last minute",
+    "expected_score_range": [2, 3],
+    "expected_action": "approve",
+    "violation_type": "none",
+    "reasoning": "Spontaneous but respectful invitation"
+  },
+  {
+    "content": "If you don't respond I'll keep messaging until you do",
+    "expected_score_range": [8, 10],
+    "expected_action": "immediate_action",
+    "violation_type": "harassment_threat",
+    "reasoning": "Explicit threat of continued harassment"
+  }
+]
