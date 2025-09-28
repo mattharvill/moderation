@@ -189,10 +189,66 @@ Analysis: Content flagged by AI safety systems
       })
 
         # Step 3: Generate accuracy report
-        # Your task: calculate overall accuracy percentage
-        # Your task: identify false positives and negatives
+        total_cases = len(results)
+        accurate_cases = sum(1 for r in results if r["is_accurate"])
+        accuracy_percentage = (accurate_cases / total_cases) * 100 if total_cases > 0 else 0
 
-        return results
+        # Identify false positives and negatives
+        false_positives = []  # AI scored too high (overly restrictive)
+        false_negatives = []  # AI scored too low (missed violations)
+
+        for result in results:
+            if result["ai_score"] is not None and not result["is_accurate"]:
+                expected_min, expected_max = result["expected_range"]
+                ai_score = result["ai_score"]
+
+                if ai_score > expected_max:
+                    false_positives.append({
+                        "content": result["content"],
+                        "ai_score": ai_score,
+                        "expected_range": result["expected_range"],
+                        "severity": ai_score - expected_max
+                    })
+                elif ai_score < expected_min:
+                    false_negatives.append({
+                        "content": result["content"],
+                        "ai_score": ai_score,
+                        "expected_range": result["expected_range"],
+                        "severity": expected_min - ai_score
+                    })
+
+        # Print evaluation summary
+        print(f"\n{'='*60}")
+        print("EVALUATION RESULTS")
+        print(f"{'='*60}")
+        print(f"Total test cases: {total_cases}")
+        print(f"Accurate predictions: {accurate_cases}")
+        print(f"Overall accuracy: {accuracy_percentage:.1f}%")
+        print(f"False positives: {len(false_positives)} (overly restrictive)")
+        print(f"False negatives: {len(false_negatives)} (missed violations)")
+
+        if false_positives:
+            print(f"\nTOP FALSE POSITIVES (AI too restrictive):")
+            for fp in sorted(false_positives, key=lambda x: x["severity"], reverse=True)[:3]:
+                print(f"  - \"{fp['content'][:50]}...\" (AI: {fp['ai_score']}, Expected: {fp['expected_range']})")
+
+        if false_negatives:
+            print(f"\nTOP FALSE NEGATIVES (AI missed violations):")
+            for fn in sorted(false_negatives, key=lambda x: x["severity"], reverse=True)[:3]:
+                print(f"  - \"{fn['content'][:50]}...\" (AI: {fn['ai_score']}, Expected: {fn['expected_range']})")
+
+        return {
+            "results": results,
+            "accuracy": accuracy_percentage,
+            "false_positives": false_positives,
+            "false_negatives": false_negatives,
+            "summary": {
+                "total_cases": total_cases,
+                "accurate_cases": accurate_cases,
+                "fp_count": len(false_positives),
+                "fn_count": len(false_negatives)
+            }
+        }
 
 def main(): # this is where our program starts
      """Run the AI moderator demo"""
