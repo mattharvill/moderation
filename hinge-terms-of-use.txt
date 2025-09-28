@@ -1123,25 +1123,7 @@ Hinge acknowledge and agree to act in good faith to ensure the fair
 resolution of genuine and sincere Disputes. The Parties further agree that
 application of these Mass Filings procedures have been reasonably designed
 to result in an efficient and fair adjudication of such Disputes.
-15e. FUTURE CHANGES AND RETROACTIVE APPLICATION
-This Dispute Resolution Section 15 applies to all Disputes between the Parties, including for any
-claims that accrued against you or Hinge prior to the time of your consent to this Agreement and
-to any claims that accrue against you or Hinge after your consent to this Agreement.
-Notwithstanding any provision in this Agreement to the contrary, you may elect to opt out of the
-retroactive application of this Dispute Resolution Section 15 as to claims that have accrued
-against you or against Hinge prior to the time of your consent to this Agreement. You may opt out
-by sending us written notice, within 30 days of the time you consent to this Agreement, to the
-following email address: OptOut@hinge.co. Please do not direct any customer support inquiries
-OptOut@hinge.co, as they will not be addressed; such inquiries should be directed to Customer
-Service at hello@hinge.co. You must include information sufficient to identify your account(s),
-such as the email address or phone number associated with your account(s), and should include a
-statement that you are opting out of the retroactive application of this Dispute Resolution Section
-15. Please note: if you opt out of the retroactive application of this Dispute Resolution Section 15,
-you will still be subject to and bound by any Dispute Resolution Sections and Arbitration
-Procedures you previously agreed to, including any arbitration provisions, class action waivers,
-and retroactive application sections. Also, regardless of whether you opt out of the retroactive
-application of these changes, the Parties will resolve any claims that accrue against you or Hinge
-after your consent to this Agreement in accordance with this Dispute Resolution Section.
+
 16. GOVERNING LAW
 Texas law and the Federal Arbitration Act will apply to any Dispute (except where
 prohibited by law).
@@ -1158,19 +1140,7 @@ Both parties agree that this choice of law agreement is enforceable and waives t
 have a court conduct a conflicts of law analysis.
 In the EU and EEA, the choice of Texas governing law shall not apply only where a mandatory
 consumer protection law explicitly prohibits such choice of law provisions.
-17. VENUE/FORUM SELECTION
-To the fullest extent allowable by law, any claims that are not arbitrated for any reason must
-be litigated in Dallas County, Texas (except for claims filed in small claims court, or for users
-residing in the EU, EEA, UK or Switzerland or another jurisdiction where prohibited by law).
-Except where prohibited by law, including for users residing in the EU, EEA, UK or
-Switzerland, who may bring claims in their country of residence in accordance with applicable
-law, and except for claims that are heard in a small claims court as set forth in Section 15, any
-claims arising out of or relating to this Agreement (including any challenges to the class action
-waiver provision in subsection 15b), to our Services, or to your relationship with Hinge that for
-whatever reason are not required to be arbitrated or filed in small claims court, will be litigated
-exclusively in the federal or state courts located in Dallas County, Texas, U.S.A. You and Hinge
-consent to the exercise of personal jurisdiction of courts in the State of Texas and waive any
-claim that such courts constitute an inconvenient forum.
+
 18. INDEMNITY BY YOU
 You agree to indemnify Hinge if a claim is made against Hinge due to your actions.
 You agree, to the extent permitted under applicable law, to indemnify, defend, and hold harmless
@@ -1189,78 +1159,3 @@ Upon Purchase. If you do not accept and agree to be bound by all of the terms of
 Agreement, you are not entitled to use our Services.
 All pronouns and any variations thereof shall be deemed to refer to the masculine, feminine,
 neuter, singular or plural as the identity of the entities or persons referred to any require.
-20. ENTIRE AGREEMENT
-This Agreement supersedes any previous agreements or representations.
-These Terms, with the Privacy Policy, Cookie Policy, Member Principles, and Safety Dating
-Advice, and any Additional Terms Upon Purchase, contain the entire agreement between you and
-Hinge regarding the use of our Services. The Terms supersede all previous agreements,
-representations, and arrangements between us, written or oral. If any provision of these Terms is
-held invalid, illegal, or otherwise unenforceable, the remainder of the Terms shall continue in full
-force and effect. The failure of the Company to exercise or enforce any right or provision of
-these Terms shall not constitute a waiver of such right or provision. You agree that your Hinge
-account is non-transferable and all of your rights to your account and its content terminate upon
-your death, unless otherwise provided by law. Any rights and licenses granted hereunder, may
-not be transferred or assigned by you, but may be assigned by us without restriction. No agency,
-partnership, joint venture, fiduciary or other special relationship or employment is created as a
-result of these Terms, and you may not make any representations on behalf of or bind Hinge in
-any manner.
-21. SPECIAL STATE TERMS
-Special terms apply in Arizona, California, Colorado, Connecticut, Illinois, Iowa, Minnesota,
-New York, North Carolina, Ohio, Rhode Island, and Wisconsin
-For subscribers residing in New York:
-● The Services do not guarantee any number of "referrals" - rather, the
-functionality of the Services is such that the subscriber can view as many
-profiles as they would like;
-● Upon notice in writing and delivered to Match Group Legal, P.O. Box 25472,
-Dallas, Texas 75225, USA, subscribers may place their subscription on hold for up
-to one year;
-● How your information is used and how you may access your information is set forth
-in Section 5 and our Privacy Policy;
-● You may review the New York Dating Service Consumer Bill of Rights here;
-For subscribers residing in North Carolina:
-● You may review the North Carolina Buyer's Rights here.
-For subscribers residing in Illinois, New York, North Carolina, and Ohio:
-● Our Services are widely available in the United States - if you believe that you
-have moved outside a location where we provide the Services, please contact us
-in writing delivered to Match Group Legal, P.O. Box 25472, Dallas, Texas 75225,
-USA, and we will work with you to provide alternative services or a refund.
-For subscribers residing in Arizona, California, Colorado, Connecticut, Illinois, Iowa,
-Minnesota, New York, North Carolina, Ohio, Rhode Island, and Wisconsin:
-Your Right to Cancel - You may cancel your subscription, without penalty or obligation, at
-any time prior to midnight of the third business day following the date you subscribed. In
-the event that you die before the end of your subscription period, your estate shall be entitled to a
-refund of that portion of any payment you had made for your subscription which is allocable to
-the period after your death. In the event that you become disabled (such that you are unable to
-use our Services) before the end of your subscription period, you shall be entitled to a refund of
-that portion of any payment you had made for your subscription which is allocable to the period
-after your disability by providing the Company notice in the same manner as you request a
-refund as described above in Section 8.
-For subscribers residing in Colorado:
-Learn more about our safety policies and find local resources here.
-22. SPECIAL COUNTRY TERMS
-Special terms apply in Denmark.
-For subscribers residing in Denmark and the United Kingdom:
-● If you wish to exercise your right of cancellation, you may complete and send the below
-standard form of cancellation. NOTE: if you purchased your subscription through Apple,
-the termination or cancellation must be sent to Apple.
-● Exception to the right of cancellation: You cannot cancel an order that includes a delivery
-of digital content that is not delivered on a physical medium if order processing has begun
-with your express, prior consent and acknowledgment that you thereby waive your right of
-cancellation. This applies, for example, to the purchase of Virtual Items. This means that
-these types of purchases are FINAL AND NON-EXCHANGEABLE OR REFUNDABLE.
-To MTCH Technology Services Limited, Hinge, Attn: Cancellations, MTCH Technology
-Services Limited, 1 Hatch Street Upper, Dublin 2, Ireland D02PY28, email:
-legaldept@match.com.
-I hereby declare that I wish to exercise my right of withdrawal in connection with my
-purchase agreement for the provision of the following services
-Order number:
-Order date:
-Customer's name:
-Customer's address:
-Customer's email address:
-The customer's phone number:
-Date:
-For users residing in the United Kingdom:
-If you believe we have taken action against your content or account in a way that does not comply
-with these Terms, you have the right to bring a claim for breach of contract under UK law. We
-encourage you to first submit an appeal, as this may lead to a faster and more efficient resolution.
