@@ -44,6 +44,7 @@ other employees;
 your login information; and
 9. Present yourself respectfully and authentically by adding at least one photo that shows
 your face.
+
 2c. PROHIBITED ACTIONS
 You agree that you will not:
 1. Misrepresent your identity, age, employment (current or previous), qualifications, or
@@ -254,15 +255,6 @@ For information about how Hinge and its affiliates collect, use, and share your 
 please read our Privacy Policy. By using our Services, you agree that we may use your personal
 data in accordance with our Privacy Policy.
 
-Your Right to Cancel - You may cancel your subscription, without penalty or obligation, at any
-time prior to midnight of the third business day following the date you subscribed. In the event
-that you die before the end of your subscription period, your estate shall be entitled to a refund
-of that portion of any payment you had made for your subscription which is allocable to the
-period after your death. In the event that you become disabled (such that you are unable to use
-our Services) before the end of your subscription period, you shall be entitled to a refund of that
-portion of any payment you had made for your subscription which is allocable to the period after
-your disability by providing the Company notice in the same manner as you request a refund as
-described below.
 9. ACCOUNT TERMINATION
 If you no longer wish to use our Services, or if we terminate your account for any reason,
 here's what you need to know.
@@ -316,94 +308,3 @@ SUCH IMPROPER BEHAVIOR.
 Though Hinge strives to encourage a respectful user experience, it is not responsible for the
 conduct of any user on or off the Service. You agree to use caution in all interactions with other
 users, particularly if you decide to communicate off the Service or meet in person.
-
-12. DIGITAL MILLENNIUM COPYRIGHT ACT
-We take copyright infringement very seriously. We ask you to help us to ensure
-we address it promptly and effectively.
-Hinge has adopted the following policy towards copyright infringement in accordance with the
-Digital Millennium Copyright Act (the "DMCA"). If you believe any Member Content or Our
-Content infringes upon your intellectual property rights, please submit a notification alleging
-such infringement ("DMCA Takedown Notice") including the following:
-1. A physical or electronic signature of a person authorized to act on behalf of the owner
-of an exclusive right that is allegedly infringed;
-2. Identification of the copyrighted work claimed to have been infringed, or, if
-multiple copyrighted works at a single online site are covered by a single
-notification, a representative list of such works;
-3. Identification of the material claimed to be infringing or to be the subject of infringing
-activity and that is to be removed or access disabled and information reasonably
-sufficient to permit the service provider to locate the material;
-4. Information reasonably sufficient to permit the service provider to contact you,
-such as an address, telephone number, and, if available, an electronic mail;
-5. A statement that you have a good faith belief that use of the material in the manner
-complained of is not authorized by the copyright owner, its agent, or the law; and
-6. A statement that, under penalty of perjury, the information in the notification is
-accurate and you are authorized to act on behalf of the owner of the exclusive right
-that is allegedly infringed.
-Any DMCA Takedown Notices should be sent to copyright@match.com, by phone to
-214-576-3272 or via mail to the following address: Copyright Compliance Department c/o
-Match Group Legal, 8750 N. Central Expressway, Dallas, Texas 75231.
-Hinge will terminate the accounts of repeat infringers.
-
-
-15. DISPUTE RESOLUTION SECTION
-In the unlikely event that we have a legal dispute, here is how the Parties agree to proceed,
-except where prohibited by applicable law.
-15a. INFORMAL DISPUTE RESOLUTION PROCESS
-If you are dissatisfied with our Services for any reason, please contact Hinge Customer Service
-at hello@hinge.co first so we can try to resolve your concerns without the need of outside
-assistance. If you choose to pursue a dispute, claim or controversy against Hinge, these terms
-will apply. For purposes of this Dispute Resolution Process and Arbitration Procedures set forth
-in Section 15, “Hinge” shall include our affiliates, employees, licensors, and service providers.
-Hinge values its relationship with you and appreciates the mutual benefit realized from informally
-resolving Disputes. “Dispute” is any dispute, claim, or controversy between you and Hinge that
-arises from or relates in any way to this Agreement (including any alleged breach of this
-Agreement), the Service, or our relationship with you. “Dispute” as used in this Agreement shall
-have the broadest possible meaning and include claims that arose before the existence of this or
-any prior Agreement, claims that arise during the term of this Agreement, and claims that arise
-after the termination of this Agreement (unless this Agreement is superseded by a subsequent
-Agreement entered into by you and Hinge).
-If you have a Dispute with Hinge (“Your Dispute”), before formally pursuing Your Dispute in
-arbitration or small claims court, you agree to first (send a detailed notice (“Notice”) to CT
-Corporation, c/o Hinge, 1209 Orange Street, City of Wilmington, County of New Castle, Delaware
-19801, USA. However, if Your Dispute includes individual claims covered by the Ending Forced
-Arbitration of Sexual Harassment Act, then you are not required to send a Notice before pursuing
-your claims in accordance with Section 17. Your Notice must contain all of the following
-information: (1) your full name; (2) information that enables Hinge to identify your account,
-including a picture or screenshot of your profile, your address, mobile phone number, email
-address, and date of birth you used to register your account if any; and (3) a detailed description of
-your Dispute, including the nature and factual basis of your claim(s) and the relief you are seeking
-with a corresponding calculation of your alleged damages (if any). You must personally sign this
-Notice for it to be effective.
-If Hinge has a Dispute with you (“Hinge’s Dispute”), Hinge agrees to first send a Notice to you at
-your most recent email address on file with us, or if no email address is on file, other contact
-information associated through your account. Hinge’s Dispute Notice must likewise set forth a
-detailed description of Hinge’s Dispute, which shall include the nature and factual basis of its
-claim(s) and the relief it is seeking, with a corresponding calculation of our damages (if any).
-You and Hinge agree to then negotiate in good faith in an effort to resolve the Dispute. As part of
-these good faith negotiations, Hinge may request a telephone conference with you to discuss Your
-Dispute, and you agree to personally participate, with your attorney if you’re represented by
-counsel. Likewise, you may request a telephone conference to discuss Hinge’s Dispute with you,
-and Hinge agrees to have one representative participate. (For the avoidance of doubt, if you
-submit a Notice relating to Hinge’s termination of your account, as set forth in Section 4 above,
-such Dispute is not Hinge’s Dispute with you.)
-This informal process should lead to a resolution of the Dispute. However, if the Dispute is not
-resolved within 60 days after receipt of a fully completed Notice and the Parties have not
-otherwise mutually agreed to an extension of this informal dispute resolution time period, you or
-Hinge may initiate an arbitration (subject to a Party’s right to elect small claims court as provided
-below). Completion of this informal dispute resolution is a condition precedent to filing any
-demand for arbitration or small claims court action (except to the extent the Ending Forced
-Arbitration of Sexual Assault and Sexual Harassment Act precludes arbitration of disputes of
-claims). Failure to do so is a breach of this Agreement. The statute of limitations and any filing
-fee deadlines will be tolled while you and Hinge engage in this informal dispute resolution
-process. Unless prohibited by applicable law, the arbitration provider, National Arbitration and
-Mediation (“NAM”), shall not accept or administer any demand for arbitration and shall
-administratively close any arbitration unless the Party bringing such demand for arbitration can
-certify in writing that the terms and conditions of this informal dispute resolution process were
-fully satisfied. A court of competent jurisdiction shall have authority to enforce this provision and
-to enjoin any arbitration proceeding or small claims court action accordingly.
-All offers, promises, conduct, and statements made in the course of the informal dispute
-resolution process by any party, its agents, employees, and attorneys are confidential and not
-admissible for any purpose in any subsequent proceeding (except to the extent required to certify
-in writing that the Party met the requirements of this informal dispute resolution process before
-commencing a NAM arbitration), provided that evidence that is otherwise admissible or
-discoverable shall not be rendered inadmissible or non-discoverable.
