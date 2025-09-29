@@ -11,6 +11,8 @@ Most moderation tools treat dating apps like Twitter - zero tolerance, immediate
 - Crisis intervention for self-harm (support, not punishment)
 - Dual system: gentle handling for normal chat, escalation for real threats
 - Interactive Streamlit demo with professional UI
+- **Robust error handling** for AI safety filters and edge cases
+- **Consistent output parsing** with graceful fallbacks
 
 ## Why It Matters
 Dating apps lose users when moderation is too aggressive. Over-moderation kills engagement.
@@ -80,18 +82,22 @@ Professional Streamlit interface with:
 - `hinge-terms-of-use.txt` - Reference guidelines
 
 ## Results from Testing
-- Reduced false positives in severity scoring 
-- Identified cases of appropriate content correctly identified
-- Progressive enforcement maintains safety while improving user experience
-- Context-aware scoring prevents over-moderation
-- Crisis intervention provides support rather than punishment
+- **Fixed AI output consistency issues** - Resolved parsing errors and format inconsistencies
+- **Optimized token usage** - Reduced specialized prompts from 10,177 to ~744 tokens (93% reduction)
+- **Enhanced safety filter handling** - Graceful responses when OpenAI safety systems trigger
+- **Improved hate speech detection** - Enhanced keyword detection for more accurate routing
+- **Reduced false positives** in severity scoring for dating app contexts
+- **Progressive enforcement** maintains safety while improving user experience
+- **Crisis intervention** provides support rather than punishment for self-harm content
 
 ## Technical Architecture
 - **GPT-4 dual-prompt system** for routing and analysis
+- **Optimized prompt engineering** with token limit management
+- **Robust safety filter detection** for OpenAI content policy triggers
 - **Langfuse integration** for observability and improvement tracking
-- **Streamlit frontend** with professional UI/UX
+- **Streamlit frontend** with professional UI/UX and visual examples
+- **Consistent output parsing** with improved format handling
 - **Session state management** for interactive testing
-- **Error handling and fallback formatting**
 
 ![System Architecture](./images/architecture-diagram.png)
 
