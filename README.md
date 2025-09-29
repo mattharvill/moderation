@@ -39,8 +39,7 @@ Built two different prompts that route automatically:
 **Crisis handling:**
 Self-harm detection doesn't remove content - it provides mental health resources and notifies appropriate support teams.
 
-## Demo/Results
-[Live demo](http://172.20.152.153:8502) - test it yourself
+## Results
 
 **Try these:**
 - "Hey! Want to grab coffee?" → Score 1 (appropriate)
