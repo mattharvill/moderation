@@ -48,8 +48,8 @@ Self-harm detection doesn't remove content - it provides mental health resources
 - "I want to kill myself" → Crisis intervention triggered
 
 **Results from testing:**
-- Reduced false positives in severity scoring (6 cases identified and fixed)
-- 19 cases of appropriate content correctly identified
+- Reduced false positives in severity scoring (cases identified and fixed)
+- Cases of appropriate content correctly identified
 - Progressive enforcement maintains safety while improving user experience
 
 ---
