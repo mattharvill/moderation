@@ -93,6 +93,20 @@ Professional Streamlit interface with:
 - **Session state management** for interactive testing
 - **Error handling and fallback formatting**
 
+![System Architecture](./images/architecture-diagram.png)
+
+## 🚀 Coming Soon
+
+### **RAG Implementation**
+- **Policy Knowledge Base**: Vector database of dating app guidelines and precedents
+- **Context-Aware Decisions**: Retrieve relevant policy examples for consistent enforcement
+- **Appeal Case History**: Learn from previous moderation decisions and outcomes
+- **Dynamic Policy Updates**: Automatically incorporate new guidelines without code changes
+
+### **Structured Outputs**
+- **JSON Schema Validation**: Guaranteed consistent API responses for production integration
+- **Typed Moderation Results**: Structured data for downstream systems and analytics
+- **Audit Trail Format**: Standardized logging for compliance and review processes
 ---
 **Built for AI Product Manager interviews** - Demonstrates systematic approach to trust & safety, user experience focus, and technical implementation skills.
 
