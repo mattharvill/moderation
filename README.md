@@ -74,24 +74,14 @@ Professional Streamlit interface with:
 - OpenAI API key
 - Langfuse account (for tracking)
 
-### Installation
-```bash
-pip install -r requirements.txt
-```
-
-### Running the Demo
-```bash
-streamlit run web_demo.py
-```
-
 ### Core Files
 - `hinge_moderation_v2.py` - Main moderation engine
 - `web_demo.py` - Streamlit interface
 - `hinge-terms-of-use.txt` - Reference guidelines
 
 ## Results from Testing
-- Reduced false positives in severity scoring (6 cases identified and fixed)
-- 19 cases of appropriate content correctly identified
+- Reduced false positives in severity scoring 
+- Identified cases of appropriate content correctly identified
 - Progressive enforcement maintains safety while improving user experience
 - Context-aware scoring prevents over-moderation
 - Crisis intervention provides support rather than punishment
@@ -102,8 +92,6 @@ streamlit run web_demo.py
 - **Streamlit frontend** with professional UI/UX
 - **Session state management** for interactive testing
 - **Error handling and fallback formatting**
-
-![System Architecture](./images/architecture-diagram.png)
 
 ---
 **Built for AI Product Manager interviews** - Demonstrates systematic approach to trust & safety, user experience focus, and technical implementation skills.
