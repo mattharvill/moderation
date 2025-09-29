@@ -58,9 +58,6 @@ Professional Streamlit interface with:
 
 ### Example Outputs
 
-**Normal Dating Conversation:**
-![Normal Conversation Output](./screenshots/normal-conversation-1.png)
-
 **Boundary-Pushing Content Analysis:**
 ![Boundary Analysis](./screenshots/normal-conversation-2.png)
 
