@@ -1,6 +1,5 @@
 # 🔍 AI Content Moderator - Production-Grade Trust & Safety System
 
-## [🚀 LIVE DEMO - Click to Test the System](http://172.20.152.153:8502)
 
 Built a complete AI moderation system for dating apps with dual-prompt architecture, intelligent routing, and specialized crisis intervention.
 
@@ -123,7 +122,6 @@ python3 main.py
 ✅ **Production-Grade Error Handling** - AI safety system integration and graceful degradation
 ✅ **Langfuse Observability** - Full LLM tracing with automatic monitoring and cost tracking
 ✅ **Evaluation Framework** - Ground truth dataset with systematic prompt performance testing
-✅ **Live Demo Ready** - http://172.20.152.153:8502 for Monday presentation
 🎯 **ENTERPRISE-GRADE SYSTEM** - Production AI moderation with observability and evaluation
 
 ## Current Context - Strategic PM Learning Phase
@@ -241,7 +239,6 @@ python3 main.py
 ### ✅ Professional Web Interface (`web_demo.py`)
 - **Dual-Mode Display**: Demo mode (full AI reasoning) vs User mode (clean output)
 - **Multi-Modal Support**: Single interface for text and image uploads
-- **Live Demo URL**: http://172.20.152.153:8502
 - **Interactive Testing**: Real-time content analysis for recruiters
 
 ### ✅ Advanced AI Product Insights Discovered
