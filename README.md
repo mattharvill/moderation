@@ -61,8 +61,14 @@ Professional Streamlit interface with:
 **Normal Dating Conversation:**
 ![Normal Conversation Output](./screenshots/normal-conversation-1.png)
 
-**Dating App Context Analysis:**
-![Dating Context Example](./screenshots/normal-conversation-2.png)
+**Boundary-Pushing Content Analysis:**
+![Boundary Analysis](./screenshots/normal-conversation-2.png)
+
+**Crisis Intervention for Self-Harm:**
+![Self-Harm Intervention](./screenshots/self-harm-analysis.png)
+
+**Hate Speech Detection:**
+![Hate Speech Detection](./screenshots/hate-speech-detection.png)
 
 ## Setup & Usage
 
