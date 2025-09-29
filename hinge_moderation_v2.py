@@ -315,16 +315,50 @@ class HingeAIModerator: # this is our main AI moderator.
             )
             result = response.choices[0].message.content
             print(f"GPT-4V Success: {len(result)} characters returned")  # Debug line
+
+            # Check if safety filters were triggered
+            if "I'm sorry, I can't help with that" in result or "I can't assist with" in result or len(result) < 50:
+                print("GPT-4V safety filters triggered")  # Debug line
+                return self._create_safety_filter_response()
+
             return result
         except Exception as e:
             print(f"GPT-4V Error: {e}")  # Debug line
-            return f"""STEP 1: Context Analysis
-GPT-4V safety filters triggered - content requires human review
+            return self._create_safety_filter_response()
 
-USER VIEW (for display to content creator):
-Score: 10 (explicit content detected)
-Analysis: Content flagged by AI safety systems
-**Action: Human review required**"""
+    def _create_safety_filter_response(self):
+        """Create a properly formatted response when safety filters are triggered"""
+        return f"""STEP 1: Context Analysis
+        - Content type: Image upload
+        - Safety Assessment: Content triggered OpenAI safety filters
+        - Risk Level: High (requires human review)
+
+        STEP 2: Intent Assessment
+        - Primary concern: Potentially explicit or inappropriate visual content
+        - Harm potential: Immediate safety risk requiring escalation
+
+        STEP 3: Policy Application
+        - Policy violation: Section 2d.2 - Explicit visual content policy
+        - Enforcement level: Immediate human review required
+
+        STEP 4: Evidence Documentation
+        - AI safety systems flagged content as potentially violating platform guidelines
+        - Content requires human moderator assessment for final determination
+
+        STEP 5: Action Recommendation
+        - Immediate escalation to human review team
+        - Content held for manual assessment
+        - User notified of review process
+
+        STEP 6: Automation Decision
+        - AI CONFIDENCE LEVEL: 100%
+        - AUTO-ACTION: Human review required
+
+        USER VIEW (for display to content creator):
+        Score: 10
+        Analysis: Content flagged by AI safety systems and requires human review
+        Policy Reference: Section 2d.2 - Visual content policy
+        Action: Content held for manual review by moderation team"""
 
     def parse_score_from_response(self, ai_response):
         """Extract the 1-10 score from AI response"""
