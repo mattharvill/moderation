@@ -1,7 +1,5 @@
 # Dating App Moderation That Actually Works
 
-![AI Moderation Demo](./screenshots/streamlit-interface.png)
-
 ## What I Built
 AI moderation system for dating apps that doesn't flag "Want to grab coffee?" as harassment.
 
