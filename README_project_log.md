@@ -379,7 +379,7 @@ Score 9-10: Immediate safety threats requiring instant ban
 - **Core AI PM Principle**: "Fix consistency first, then measure accuracy"
 
 ### 🚀 Technical Achievements
-- **Web Demo Active**: Streamlit interface running at http://localhost:8501
+- **Web Demo Active**: Streamlit interface available for local testing
 - **Complete Evaluation Pipeline**: Dataset → AI Analysis → Score Extraction → Accuracy Calculation
 - **Production Observability**: Every moderation decision automatically tracked in Langfuse
 - **Interview-Ready Architecture**: Demonstrates systematic AI evaluation methodology

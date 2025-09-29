@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """
 Hinge AI Content Moderator - Built from Scratch
-Product Manager: Matt
-Goal: Demonstrate Chain of Thought AI moderation for Monday leadership demo
+Goal: Demonstrate Chain of Thought AI moderation for leadership demo
 """
 
 import os

@@ -85,7 +85,8 @@ I built an AI moderation system specifically designed for dating app conversatio
 - Multi-modal support (text and image content)
 - Real-time content analysis with full reasoning transparency
 
-## [🚀 Live Demo](http://172.20.152.153:8502)
+## 🚀 Live Demo
+*Demo available on request*
 
 **Test these scenarios:**
 1. **"Hey! Want to grab coffee?"** → Appropriate (Score: 1)
