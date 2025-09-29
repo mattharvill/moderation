@@ -3,137 +3,199 @@ from hinge_moderation_v2 import HingeAIModerator
 
 def extract_user_view(full_response):
     """Extract and format the USER VIEW section from the AI response"""
-    if "USER VIEW" in full_response:
-        user_section = full_response.split("USER VIEW")[1]
-        # Clean up the formatting - handle both formats
-        user_section = user_section.replace("(for display to content creator):", "").strip()
-        user_section = user_section.replace(":", "", 1).strip()  # Remove first colon if present
+    try:
+        if "USER VIEW" in full_response:
+            # Find the USER VIEW section
+            user_start = full_response.find("USER VIEW")
+            user_section = full_response[user_start:]
 
-        # Parse and format the components
-        lines = user_section.split('\n')
-        formatted_output = ""
+            # Remove the header and any parenthetical text
+            user_section = user_section.replace("USER VIEW (for display to content creator):", "")
+            user_section = user_section.replace("USER VIEW", "", 1)
+            user_section = user_section.strip()
 
-        # First check if there's a single line containing all elements
-        full_text = user_section.strip()
-        if "Score:" in full_text and "Analysis:" in full_text and "Action:" in full_text and len(lines) <= 2:
-            # Extract score
-            score_start = full_text.find("Score:") + 6
-            analysis_start = full_text.find("Analysis:")
-            score_text = full_text[score_start:analysis_start].strip()
-            formatted_output += f"**Score: {score_text}**\n\n"
-
-            # Extract analysis
-            action_start = full_text.find("Action:")
-            analysis_text = full_text[analysis_start + 9:action_start].strip()
-            formatted_output += f"**Analysis:**\n{analysis_text}\n\n"
-
-            # Extract action
-            action_text = full_text[action_start + 7:].strip()
-            formatted_output += f"**Action:**\n{action_text}\n\n"
+            # Remove leading colon if present
+            if user_section.startswith(":"):
+                user_section = user_section[1:].strip()
         else:
-            # Handle multi-line format
+            # Fallback: look for the standard format at the end
+            lines = full_response.strip().split('\n')
+            user_lines = []
+            collecting = False
+
             for line in lines:
                 line = line.strip()
                 if line.startswith('Score:'):
-                    # Normalize score format - remove "/10" if present and ensure consistent format
-                    score_text = line.replace('Score:', '').strip()
-                    score_text = score_text.replace('/10', '')  # Remove /10 if present
-                    formatted_output += f"**Score: {score_text}**\n\n"
-                elif line.startswith('Analysis:'):
-                    formatted_output += f"**Analysis:**\n{line.replace('Analysis:', '').strip()}\n\n"
-                elif line.startswith('**Action:') or line.startswith('Action:'):
-                    action_text = line.replace('**Action:', '').replace('Action:', '').replace('**', '').strip()
-                    formatted_output += f"**Action:**\n{action_text}\n\n"
-                elif line and not line.startswith('Score:') and not line.startswith('Analysis:') and not line.startswith('Action:') and line != '**':
-                    # Handle any other content but skip empty ** lines
-                    formatted_output += f"{line}\n\n"
+                    collecting = True
+                if collecting and line:
+                    user_lines.append(line)
+
+            if user_lines:
+                user_section = '\n'.join(user_lines)
+            else:
+                return "Unable to extract user view from response"
+
+        # Parse the components
+        lines = [line.strip() for line in user_section.split('\n') if line.strip()]
+
+        score = ""
+        analysis = ""
+        policy_ref = ""
+        action = ""
+
+        # Extract each component
+        for line in lines:
+            line = line.strip()  # Extra strip to be sure
+            if line.startswith('Score:'):
+                score = line[6:].strip()
+                # Remove /10 suffix if present (but not individual digits)
+                if score.endswith('/10'):
+                    score = score[:-3].strip()
+            elif line.startswith('Analysis:'):
+                analysis = line[9:].strip()
+            elif line.startswith('Policy Reference:'):
+                policy_ref = line[17:].strip()
+            elif line.startswith('Action:') or line.startswith('**Action:'):
+                if line.startswith('**Action:'):
+                    action = line[9:].replace('**', '').strip()
+                else:
+                    action = line[7:].strip()
+
+        # Format the output consistently
+        formatted_output = f"**Score: {score}**\n\n"
+
+        if analysis:
+            formatted_output += f"**Analysis:**\n{analysis}\n\n"
+
+        if policy_ref:
+            formatted_output += f"**Policy Reference:**\n{policy_ref}\n\n"
+
+        if action:
+            formatted_output += f"**Action:**\n{action}"
 
         return formatted_output.strip()
-    else:
+
+    except Exception:
+        # If parsing fails completely, return raw USER VIEW section
+        if "USER VIEW" in full_response:
+            user_start = full_response.find("USER VIEW")
+            return full_response[user_start:].strip()
         return "Unable to extract user view from response"
 
 st.title("🔍 AI Content Moderator")
-st.write("Demo")
+st.markdown("**Dating app moderation that understands context**")
 
-# Demo mode toggle
-demo_mode = st.checkbox("Demo Mode (show full AI reasoning)")
+# Initialize session state for content
+if "test_content" not in st.session_state:
+    st.session_state.test_content = ""
 
-# Text input
-content = st.text_area("Enter content to moderate:",
-                      placeholder="Hey sexy, send me your number")
-# Image upload option
-uploaded_image = st.file_uploader("Or upload an image to moderate:",
-                                 type=['png', 'jpg', 'jpeg'])
+# Layout with columns
+col1, col2 = st.columns([3, 1])
 
-# Moderate button
-if st.button("Analyze Content"):
+with col1:
+    # Input section
+    st.subheader("Content Input")
+    content = st.text_area("Enter message to moderate:",
+                          value=st.session_state.test_content,
+                          placeholder="Hey sexy, send me your number",
+                          height=100)
+
+    # Image upload option
+    uploaded_image = st.file_uploader("Or upload an image to moderate:",
+                                     type=['png', 'jpg', 'jpeg'])
+
+with col2:
+    # Controls section
+    st.subheader("Options")
+    demo_mode = st.checkbox("Show full AI reasoning")
+
+    # Quick test examples
+    st.markdown("**Quick tests:**")
+    if st.button("Hate Speech", type="secondary"):
+        st.session_state.test_content = "You're disgusting, go back to your own country"
+        st.rerun()
+    if st.button("Self-Harm Content", type="secondary"):
+        st.session_state.test_content = "I want to kill myself, nothing matters anymore"
+        st.rerun()
+    if st.button("Fraud", type="secondary"):
+        st.session_state.test_content = "Send me $500 via Venmo and I'll send you nudes"
+        st.rerun()
+
+# Analyze button (full width)
+analyze_button = st.button("🔍 Analyze Content", type="primary", use_container_width=True)
+
+if analyze_button:
     if content or uploaded_image:
-        moderator = HingeAIModerator()
+        with st.spinner("🤖 Analyzing content..."):
+            moderator = HingeAIModerator()
 
-        if uploaded_image:
-            result = moderator.moderate_image(uploaded_image)
-        else:
-            result = moderator.moderate_content(content)
+            if uploaded_image:
+                result = moderator.moderate_image(uploaded_image)
+            else:
+                result = moderator.moderate_content(content)
+
+        # Success message
+        st.success("✅ Analysis complete!")
 
         if demo_mode:
-            st.write("### Full AI Analysis (for interview demo):")
+            # Demo mode with expandable sections (only show for detailed responses)
+            with st.expander("🧠 Full AI Analysis (Technical View)", expanded=True):
+                lines = result.split('\n')
+                formatted_lines = []
 
-            # Format the full response with consistent structure
-            lines = result.split('\n')
-            formatted_lines = []
+                for line in lines:
+                    line = line.strip()
+                    if line.startswith('STEP '):
+                        # Add blank line BEFORE each step (except the first one)
+                        if formatted_lines:  # Only add space if this isn't the first step
+                            formatted_lines.append('')
 
-            for line in lines:
-                line = line.strip()
-                if line.startswith('STEP '):
-                    # Add spacing before each step and make it bold
-                    formatted_lines.append('')  # Empty line for spacing
-                    formatted_lines.append(f"**{line}**")
-                    formatted_lines.append('')  # Empty line after step header
-                elif line.startswith('USER VIEW'):
-                    # Add separator before USER VIEW
-                    formatted_lines.append('')
-                    formatted_lines.append('---')
-                    formatted_lines.append('')
-                    formatted_lines.append(f"**{line}**")
-                    formatted_lines.append('')  # Empty line after USER VIEW header
-                elif line.startswith('- ') or line.startswith('1. ') or line.startswith('2. '):
-                    # Format bullet points and numbered lists
-                    formatted_lines.append(f"• {line[2:]}")
-                elif line and not line.startswith('STEP') and not line.startswith('USER VIEW'):
-                    # Regular content lines
-                    formatted_lines.append(line)
+                        # Add the bold step header
+                        formatted_lines.append(f"**{line}**")
+                        formatted_lines.append('')  # Blank line AFTER step header
 
-            # Join and display with markdown
-            formatted_result = '\n'.join(formatted_lines)
-            st.markdown(formatted_result)
-        else:
-            st.write("### Content Analysis:")
-            user_view = extract_user_view(result)
+                    elif line.startswith('USER VIEW'):
+                        # Stop processing before the USER VIEW section in demo mode
+                        break
 
-            # Fallback if extraction fails - show raw response for debugging
-            if user_view == "Unable to extract user view from response":
-                st.write("**Debug - Raw AI Response:**")
+                    elif line:  # If the line is not empty, make it a bullet point
+                        # Remove any existing bullet markers first
+                        if line.startswith('- ') or line.startswith('• '):
+                            line = line[2:]
+
+                        # Add our consistent bullet point on its own line
+                        formatted_lines.append(f"• {line}")
+
+                # Join with double line breaks to ensure proper spacing
+                formatted_result = '\n\n'.join(formatted_lines)
+                st.markdown(formatted_result)
+
+        # Always show user-facing results
+        st.subheader("📊 Moderation Result")
+        user_view = extract_user_view(result)
+
+        # Fallback if extraction fails - show raw response for debugging
+        if user_view == "Unable to extract user view from response":
+            st.error("Unable to parse results properly")
+            with st.expander("🔧 Debug Info"):
                 st.text(result[:500])  # Show first 500 chars for debugging
 
-                # Simple fallback formatting
-                if "Score:" in result:
-                    lines = result.split('\n')
-                    formatted_lines = []
-                    for line in lines:
-                        if line.strip().startswith("Score:"):
-                            formatted_lines.append(f"**{line.strip()}**")
-                        elif line.strip().startswith("Analysis:"):
-                            formatted_lines.append(f"**Analysis:**")
-                            formatted_lines.append(line.replace("Analysis:", "").strip())
-                        elif line.strip().startswith("Action:"):
-                            formatted_lines.append(f"**Action:**")
-                            formatted_lines.append(line.replace("Action:", "").strip())
-
-                    for line in formatted_lines:
-                        st.write(line)
-                else:
-                    st.write(result)
+            # Simple fallback formatting
+            if "Score:" in result:
+                lines = result.split('\n')
+                for line in lines:
+                    if line.strip().startswith("Score:"):
+                        score_text = line.strip().replace("Score:", "").strip()
+                        st.metric("Safety Score", score_text, help="1-10 scale, lower is safer")
+                    elif line.strip().startswith("Analysis:"):
+                        st.write("**Analysis:**")
+                        st.write(line.replace("Analysis:", "").strip())
+                    elif line.strip().startswith("Action:"):
+                        st.write("**Recommended Action:**")
+                        st.write(line.replace("Action:", "").strip())
             else:
-                st.write(user_view)
+                st.write(result)
+        else:
+            st.markdown(user_view)
     else:
-        st.warning("Please enter some content or upload an image to analyze")
+        st.error("⚠️ Please enter some content or upload an image to analyze")
